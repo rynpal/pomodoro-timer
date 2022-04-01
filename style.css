@@ -1,0 +1,57 @@
+body {
+  margin-top: 10%;
+  font-family: sans-serif;
+  background-color: lightgray;
+}
+
+.container {
+  width: 100%;
+  max-width: 300px;
+  margin: 5px auto;
+  text-align: center;
+  border: 3px solid black;
+  border-radius: 15px;
+  font-size: 2rem;
+  background-color: white;
+}
+
+.label {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.length-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.length-change {
+  background-color: lightgreen;
+}
+
+.length-change:hover {
+  cursor: pointer;
+  background-color: lightblue;
+}
+
+.numdisplay {
+  font-size: 3rem;
+}
+
+#time-left {
+  font-size: 3.4rem;
+  font-weight: bolder;
+}
+
+.timer-btns {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.timer-btn:hover {
+  cursor: pointer;
+}
+
+#pause {
+  display: none;
+}
