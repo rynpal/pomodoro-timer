@@ -8,9 +8,6 @@ let breakLength = breakEl.textContent;
 var totalSeconds; //global variable - total seconds that are on the timer
 var totalMinutes; //global variable - total minutes that are on the timer
 
-var displaySeconds; //global variable - used for displaying the seconds left
-var displayMinutes; //global variable - used for displaying the minutes left
-
 var interval; //the thing that actually does the countdown
 let onBreak = false;
 let running = false;
