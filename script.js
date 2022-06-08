@@ -20,21 +20,25 @@ $(document).ready(function () {
 //----------Functions-------------//
 
 //Set the timer display
-function timeDisplay(){
+function timeDisplay() {
   var displayMinutes = Math.floor(totalMinutes).toLocaleString("en-US", {
     minimumIntegerDigits: 2,
-    useGrouping: false 
+    useGrouping: false,
   });
 
-  var displaySeconds = (totalSeconds - displayMinutes * 60).toLocaleString("en-US",{
-    minimumIntegerDigits: 2,
-    useGrouping: false 
-  });
+  var displaySeconds = (totalSeconds - displayMinutes * 60).toLocaleString(
+    "en-US",
+    {
+      minimumIntegerDigits: 2,
+      useGrouping: false,
+    }
+  );
 
-  document.getElementById("time-left").textContent = displayMinutes + ":" + displaySeconds;
-};
+  document.getElementById("time-left").textContent =
+    displayMinutes + ":" + displaySeconds;
+}
 
-function resetInitializeDisplay(){
+function resetInitializeDisplay() {
   sound.pause();
   sound.currentTime = 0;
   $("#timer-label").text("Time");
@@ -49,9 +53,9 @@ function resetInitializeDisplay(){
   onBreak = false;
   isRunning = false;
   timeDisplay();
-};
+}
 
-function playPause(){
+function playPause() {
   if (!isRunning) {
     $("#timer-label").text("Session Started");
     $("#pause").css("display", "block");
@@ -65,10 +69,10 @@ function playPause(){
     clearInterval(interval);
     isRunning = !isRunning;
   }
-};
+}
 
 //actually does the counting down on the page.  Passed into the setInternval() function
-function countdown(){
+function countdown() {
   if (!totalSeconds && !onBreak) {
     sound.currentTime = 0;
     sound.play();
@@ -89,11 +93,11 @@ function countdown(){
   totalMinutes = totalSeconds / 60;
 
   timeDisplay();
-};
+}
 
-function setTimer(){
+function setTimer() {
   interval = setInterval(countdown, 1000);
-};
+}
 
 //----------Button Clicks-------------//
 
