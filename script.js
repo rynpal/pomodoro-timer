@@ -10,7 +10,7 @@ var totalMinutes; //global variable - total minutes that are on the timer
 
 var interval; //the thing that actually does the countdown
 let onBreak = false;
-let running = false;
+let isRunning = false;
 
 //only executes whenthe page is first loaded
 $(document).ready(function () {
@@ -47,23 +47,23 @@ function resetInitializeDisplay(){
 
   clearInterval(interval);
   onBreak = false;
-  running = false;
+  isRunning = false;
   timeDisplay();
 };
 
 function playPause(){
-  if (!running) {
+  if (!isRunning) {
     $("#timer-label").text("Session Started");
     $("#pause").css("display", "block");
     $("#play").css("display", "none");
     setTimer();
-    running = !running;
+    isRunning = !isRunning;
   } else {
     $("#timer-label").text("Session Paused");
     $("#play").css("display", "block");
     $("#pause").css("display", "none");
     clearInterval(interval);
-    running = !running;
+    isRunning = !isRunning;
   }
 };
 
@@ -104,7 +104,7 @@ $("#session-increment").click(function () {
   }
   sessionLength += 1;
   sessionEl.textContent = sessionLength;
-  if (running == false) {
+  if (isRunning == false) {
     totalSeconds = sessionEl.textContent * 60;
     totalMinutes = totalSeconds / 60;
     timeDisplay();
@@ -118,7 +118,7 @@ $("#session-decrement").click(function () {
   }
   sessionLength -= 1;
   sessionEl.textContent = sessionLength;
-  if (running == false) {
+  if (isRunning == false) {
     totalSeconds = sessionEl.textContent * 60;
     totalMinutes = totalSeconds / 60;
 
